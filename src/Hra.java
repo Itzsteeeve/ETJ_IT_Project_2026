@@ -10,11 +10,27 @@ public class Hra {
     }
 
     private void pripravPrikazy() {
-
+        // vložení základních příkazů
+        this.platnePrikazy.vlozPrikaz(new PrikazJdi(this.herniPlan));
+        this.platnePrikazy.vlozPrikaz(new PrikazKonec(this));
+        this.platnePrikazy.vlozPrikaz(new PrikazNapoveda());
+        this.platnePrikazy.vlozPrikaz(new PrikazInventar(this.herniPlan.getInventar()));
+        this.platnePrikazy.vlozPrikaz(new PrikazVezmi(this.herniPlan));
     }
 
     public String zpracujPrikaz(String radek) {
-        return "";
+        if (radek == null || radek.trim().isEmpty()) return "Neplatný příkaz.";
+        String[] parts = radek.trim().split("\\s+", 2);
+        String prikaz = parts[0];
+        String args = parts.length > 1 ? parts[1] : "";
+
+        IPrikaz p = platnePrikazy.vratPrikaz(prikaz);
+        if (p == null) return "Neznámý příkaz: " + prikaz;
+        if (args.isEmpty()) {
+            return p.provedPrikaz();
+        } else {
+            return p.provedPrikaz(args.split("\\s+"));
+        }
     }
 
     public boolean jeKonec() { return konecHry; }

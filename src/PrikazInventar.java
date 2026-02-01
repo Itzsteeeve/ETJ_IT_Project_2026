@@ -1,5 +1,3 @@
-package Prikazy;
-
 public class PrikazInventar implements IPrikaz {
     private Inventar inv;
     public PrikazInventar(Inventar inv) { this.inv = inv; }

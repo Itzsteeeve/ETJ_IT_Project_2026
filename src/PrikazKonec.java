@@ -1,5 +1,3 @@
-package Prikazy;
-
 public class PrikazKonec implements IPrikaz {
     private Hra hra;
     public PrikazKonec(Hra hra) { this.hra = hra; }

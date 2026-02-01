@@ -1,5 +1,3 @@
-package Prikazy;
-
 public class PrikazMluv implements IPrikaz {
     private HerniPlan plan;
     public PrikazMluv(HerniPlan plan) { this.plan = plan; }

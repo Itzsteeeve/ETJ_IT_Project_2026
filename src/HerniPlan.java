@@ -1,5 +1,3 @@
-package Prikazy;
-
 public class HerniPlan {
     private Prostor aktualniProstor;
     private Inventar inventar;

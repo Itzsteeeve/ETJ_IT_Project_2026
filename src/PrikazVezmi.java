@@ -1,5 +1,3 @@
-package Prikazy;
-
 public class PrikazVezmi implements IPrikaz {
     private HerniPlan plan;
     public PrikazVezmi(HerniPlan plan) { this.plan = plan; }

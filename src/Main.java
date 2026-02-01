@@ -1,4 +1,3 @@
-package Prikazy;
 
 import java.util.Scanner;
 
@@ -8,7 +7,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
 
-        // Hlavní smyčka hry
+
         while (!hra.jeKonec()) {
             System.out.print("> ");
             String radek = scanner.nextLine();

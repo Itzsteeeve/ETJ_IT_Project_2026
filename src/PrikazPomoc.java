@@ -1,5 +1,3 @@
-package Prikazy;
-
 public class PrikazPomoc implements IPrikaz {
     private SeznamPrikazu sp;
     public PrikazPomoc(SeznamPrikazu sp) { this.sp = sp; }

@@ -1,7 +1,6 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,9 +10,8 @@ public class HerniPlan {
         Map<String, Postava> postavy = new HashMap<>();
         ObjectMapper mapper = new ObjectMapper();
 
-        try {
-            InputStream input = new FileInputStream("resource/Postavy.json");
-            Postava[] nactene = mapper.readValue(input, Postava[].class);
+        try (FileReader reader = new FileReader("resource/Postavy.json")) {
+            Postava[] nactene = mapper.readValue(reader, Postava[].class);
 
             if (nactene != null) {
                 for (Postava p : nactene) {
@@ -32,9 +30,8 @@ public class HerniPlan {
         Map<String, Prostor> prostory = new HashMap<>();
         ObjectMapper mapper = new ObjectMapper();
 
-        try {
-            InputStream input = new FileInputStream("resource/Mistnosti.json");
-            Prostor[] nactene = mapper.readValue(input, Prostor[].class);
+        try (FileReader reader = new FileReader("resource/Mistnosti.json")) {
+            Prostor[] nactene = mapper.readValue(reader, Prostor[].class);
 
             if (nactene != null) {
                 for (Prostor p : nactene) {
@@ -57,9 +54,8 @@ public class HerniPlan {
         Map<String, Predmet> predmety = new HashMap<>();
         ObjectMapper mapper = new ObjectMapper();
 
-        try {
-            InputStream input = new FileInputStream("resource/Predmety.json");
-            Predmet[] nactene = mapper.readValue(input, Predmet[].class);
+        try (FileReader reader = new FileReader("resource/Predmety.json")) {
+            Predmet[] nactene = mapper.readValue(reader, Predmet[].class);
 
             if (nactene != null) {
                 for (Predmet p : nactene) {

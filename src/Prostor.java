@@ -9,6 +9,12 @@ public class Prostor {
     private Map<String, Predmet> predmety = new HashMap<>();
     private Postava npc;
 
+    // Jackson potřebuje bezparametrický konstruktor
+    public Prostor() {
+        this.vychody = new HashMap<>();
+        this.predmety = new HashMap<>();
+    }
+
     public Prostor(String nazev, String popis, String patro) {
         this.nazev = nazev;
         this.popis = popis;
@@ -34,4 +40,16 @@ public class Prostor {
     public String getNazev() { return nazev; }
     public String getPopis() { return popis; }
     public String getPatro() { return patro; }
+
+    public void setNazev(String nazev) {
+        this.nazev = nazev;
+    }
+
+    public void setPopis(String popis) {
+        this.popis = popis;
+    }
+
+    public void setPatro(String patro) {
+        this.patro = patro;
+    }
 }

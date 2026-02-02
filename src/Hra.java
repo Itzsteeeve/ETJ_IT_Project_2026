@@ -16,7 +16,7 @@ public class Hra {
 
     public Hra() {
         this.inventar = new Inventar();
-        this.prostory = HerniPlan.nactiProstory();
+        this.prostory = HerniPlan.zalozProstory();
         nastavAktualniProstor();
         nactiAPriradPostavy();
         nactiAPriradPredmety();

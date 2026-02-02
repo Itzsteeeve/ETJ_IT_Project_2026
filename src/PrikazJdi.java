@@ -11,6 +11,9 @@ public class PrikazJdi implements IPrikaz {
         if (novy == null) {
             return "Prostor '" + cil + "' neexistuje.";
         }
+        if (!novy.getPatro().equals(hra.getAktualniProstor().getPatro())) {
+            return "Nemůžeš jít do jiného patra.";
+        }
         hra.setAktualniProstor(novy);
         return "Přesunuto do: "+novy.getNazev()+" - "+novy.getPopis();
     }

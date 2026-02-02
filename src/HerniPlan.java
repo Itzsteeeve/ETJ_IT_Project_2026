@@ -2,27 +2,53 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class HerniPlan {
-    private Prostor aktualniProstor;
-    private Inventar inventar;
 
-    public HerniPlan() {
-        this.inventar = new Inventar();
-        zalozProstory();
+    public static Map<String, Postava> nactiPostavy() {
+        Map<String, Postava> postavy = new HashMap<>();
+        ObjectMapper mapper = new ObjectMapper();
+        try (InputStream input = new FileInputStream("resource/Postavy.json")) {
+            @SuppressWarnings("unchecked")
+            Map<String, Object>[] characters = (Map<String, Object>[]) mapper.readValue(input, Map[].class);
+
+            if (characters != null) {
+                for (Map<String, Object> raw : characters) {
+                    Object n = raw.get("jmeno");
+                    if (n == null) continue;
+                    String jmeno = n.toString();
+                    Object p = raw.get("popis");
+                    String popis = p == null ? "" : p.toString();
+                    Object v = raw.get("vety");
+                    List<String> vety = new ArrayList<>();
+                    if (v instanceof List) {
+                        for (Object veta : (List<?>) v) {
+                            vety.add(veta.toString());
+                        }
+                    }
+                    postavy.put(jmeno, new Postava(jmeno, popis, vety));
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Chyba při načítání postav: " + e.getMessage());
+        }
+        return postavy;
     }
 
-    private void zalozProstory() {
-        try (InputStream input = new FileInputStream("resource/Mistnosti.json")) {
-            ObjectMapper mapper = new ObjectMapper();
-            Map[] rooms = mapper.readValue(input, Map[].class);
+    public static Map<String, Prostor> nactiProstory() {
+        Map<String, Prostor> prostory = new HashMap<>();
 
-            Map<String, Prostor> prostory = new HashMap<>();
+        ObjectMapper mapper = new ObjectMapper();
+        try (InputStream input = new FileInputStream("resource/Mistnosti.json")) {
+            @SuppressWarnings("unchecked")
+            Map<String, Object>[] rooms = (Map<String, Object>[]) mapper.readValue(input, Map[].class);
 
             if (rooms != null) {
-                for (Map raw : rooms) {
+                for (Map<String, Object> raw : rooms) {
                     Object n = raw.get("nazev");
                     if (n == null) continue;
                     String nazev = n.toString();
@@ -33,27 +59,14 @@ public class HerniPlan {
                     prostory.put(nazev, new Prostor(nazev, popis, patro));
                 }
             }
-
-            for (Prostor p1 : prostory.values()) {
-                for (Prostor p2 : prostory.values()) {
-                    if (!p1.getNazev().equals(p2.getNazev()) && p1.getPatro().equals(p2.getPatro())) {
-                        p1.setVychod(p2);
-                    }
-                }
-            }
-
-            if (prostory.containsKey("vrátnice")) {
-                this.aktualniProstor = prostory.get("vrátnice");
-            } else if (!prostory.isEmpty()) {
-                this.aktualniProstor = prostory.values().iterator().next();
-            }
-
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println("Chyba při načítání" + e.getMessage());
         }
-    }
 
-    public Prostor getAktualniProstor() { return aktualniProstor; }
-    public void setAktualniProstor(Prostor p) { this.aktualniProstor = p; }
-    public Inventar getInventar() { return inventar; }
+        if (prostory.isEmpty()) {
+            System.err.println("Nebyly načteny žádné místnosti z JSONu.");
+        }
+
+        return prostory;
+    }
 }

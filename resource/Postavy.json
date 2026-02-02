@@ -1,0 +1,29 @@
+[
+  {
+    "jmeno": "bufeták",
+    "popis": "Bufeták, který prodává svačiny a nápoje ve školním bufetu.",
+    "vety": [
+      "Co si dáš? Máme čokolády, chipsy a limonády.",
+      "Dnes je speciální nabídka: teplý oběd za polovic.",
+      "Platíš kartou nebo hotově?"
+    ]
+  },
+  {
+    "jmeno": "uklízečka",
+    "popis": "Uklízečka, která udržuje školu v čistotě a má vždy něco na srdci.",
+    "vety": [
+      "Ahoj, potřebuješ něco uklidit?",
+      "Škola je plná prachu, musím se do toho pustit.",
+      "Buď tak hodný a nešlapej po podlaze, právě jsem ji umyla."
+    ]
+  },
+  {
+    "jmeno": "školník",
+    "popis": "Školník, který dohlíží na chod školy a má vždy rady na všechno.",
+    "vety": [
+      "Dobré ráno, mladý muži. Co tady děláš?",
+      "Pokud něco potřebuješ, řekni mi, já to zařídím.",
+      "Škola musí být v pořádku, jinak by to nešlo."
+    ]
+  }
+]

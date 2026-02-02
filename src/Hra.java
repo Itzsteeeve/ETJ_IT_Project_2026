@@ -6,17 +6,11 @@ public class Hra {
     public Hra() {
         this.herniPlan = new HerniPlan();
         this.platnePrikazy = new SeznamPrikazu();
-        pripravPrikazy();
     }
 
-    private void pripravPrikazy() {
-        // vložení základních příkazů
-        this.platnePrikazy.vlozPrikaz(new PrikazJdi(this.herniPlan));
-        this.platnePrikazy.vlozPrikaz(new PrikazKonec(this));
-        this.platnePrikazy.vlozPrikaz(new PrikazNapoveda());
-        this.platnePrikazy.vlozPrikaz(new PrikazInventar(this.herniPlan.getInventar()));
-        this.platnePrikazy.vlozPrikaz(new PrikazVezmi(this.herniPlan));
-    }
+
+
+
 
     public String zpracujPrikaz(String radek) {
         if (radek == null || radek.trim().isEmpty()) return "Neplatný příkaz.";

@@ -4,24 +4,23 @@ public class Main {
     public static void main(String[] args) {
         Hra hra = new Hra();
 
-        Map<String,Postava> postavy = HerniPlan.nactiPostavy();
 
-        System.out.println(postavy);
+        Prostor start = hra.getAktualniProstor();
+        String vysledek = hra.zpracujPrikaz("prozkoumej");
+        String vysledek1 = hra.zpracujPrikaz("mluv");
+        String vysledek2 = hra.zpracujPrikaz("napoveda");
+        System.out.println("Aktuální prostor: " + start.getNazev() + " (" + start.getPatro() + ")");
 
-        Postava skolnik = postavy.get("školník");
-        Postava uklizecka = postavy.get("uklízečka");
-        Postava bufetak = postavy.get("bufeták");
+        
+        System.out.println("Příkaz 'prozkoumej': " + vysledek.replace("\n", " | "));
 
-        System.out.println(skolnik);
-        System.out.println(uklizecka);
-        System.out.println(bufetak);
 
-        Map<String,Prostor> prostory = HerniPlan.nactiProstory();
-        System.out.println(prostory);
+        System.out.println("Příkaz 'mluv': " + vysledek1);
 
-        Prostor ucebna26 = prostory.get("Učebna 26");
+        
+        System.out.println("Příkaz 'napoveda': " + vysledek2);
 
-        System.out.println(ucebna26);
+
 
 
     }

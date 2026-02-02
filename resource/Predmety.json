@@ -1,0 +1,130 @@
+[
+  {
+    "nazev": "Starý svazek klíčů",
+    "popis": "Svazek starých klíčů, možná otevře nějaké dveře.",
+    "ucel": "Otevírá dveře do tělocvičny a technické místnosti v přízemí.",
+    "prostor": "učebna 26",
+    "prenositelny": true,
+    "pouziti": "oficialni"
+  },
+  {
+    "nazev": "Magnetický šroubovák",
+    "popis": "Šroubovák s magnetem na konci.",
+    "ucel": "Slouží k odšroubování krytů ventilace a elektrických skříněk.",
+    "prostor": "tělocvična",
+    "prenositelny": true,
+    "pouziti": "oficialni"
+  },
+  {
+    "nazev": "Špinavá karta správce",
+    "popis": "Karta pokrytá špínou, možná potřebuje vyčištění.",
+    "ucel": "Je schovaná v krytu ventilace. Je ale špinavá, takže ji počítač v 2. patře nepřečte.",
+    "prostor": "učebna 16",
+    "prenositelny": true,
+    "pouziti": "oficialni"
+  },
+  {
+    "nazev": "Lahvička s lihem",
+    "popis": "Malá lahvička s čistícím lihem.",
+    "ucel": "Použiješ ho na 'očištění' karty správce. Bez lihu se v učebně 8 nepohneš.",
+    "prostor": "učebna 26",
+    "prenositelny": true,
+    "pouziti": "oficialni"
+  },
+  {
+    "nazev": "Ředitelovo heslo",
+    "popis": "Heslo napsané na papírku.",
+    "ucel": "Po vložení čisté karty do PC se na monitoru zobrazí kód: JECNA_KEBAB_2026.",
+    "prostor": "učebna 8",
+    "prenositelny": false,
+    "pouziti": "oficialni"
+  },
+  {
+    "nazev": "Neaktivní ISIC",
+    "popis": "Studentská karta bez oprávnění.",
+    "ucel": "Je v trezoru za obrazem. Musíš použít heslo z 2. patra.",
+    "prostor": "kancelář",
+    "prenositelny": true,
+    "pouziti": "oficialni"
+  },
+  {
+    "nazev": "Aktivátor terminálu",
+    "popis": "Zařízení pro aktivaci karet.",
+    "ucel": "Speciální zařízení, které na ISIC nahraje oprávnění k otevření vchodu.",
+    "prostor": "sporovna",
+    "prenositelny": true,
+    "pouziti": "oficialni"
+  },
+  {
+    "nazev": "Náhradní čipová čtečka",
+    "popis": "Náhradní díl pro čtečku karet.",
+    "ucel": "Čtečka u hlavního vchodu je rozbitá. Musíš dojít do suterénu, vzít náhradní díl a čtečku na vrátnici opravit.",
+    "prostor": "suterén – dílny",
+    "prenositelny": true,
+    "pouziti": "oficialni"
+  },
+  {
+    "nazev": "Autorizovaný ISIC",
+    "popis": "Plně aktivovaná studentská karta.",
+    "ucel": "Finální předmět k odemknutí hlavních dveří.",
+    "prostor": "vrátnice",
+    "prenositelny": true,
+    "pouziti": "oficialni"
+  },
+  {
+    "nazev": "Rezavé páčidlo",
+    "popis": "Rezavé páčidlo pro násilné otevírání.",
+    "ucel": "Slouží k násilnému otevření zadního východu nebo zamčených skříněk.",
+    "prostor": "tělocvična",
+    "prenositelny": true,
+    "pouziti": "alternativni"
+  },
+  {
+    "nazev": "Mince",
+    "popis": "Kovová mince.",
+    "ucel": "Hodíš ji do automatu v bufetu. Hluk přiláká uklízečku a uvolní ti cestu chodbou.",
+    "prostor": "učebna 19",
+    "prenositelny": true,
+    "pouziti": "alternativni"
+  },
+  {
+    "nazev": "Horký čaj",
+    "popis": "Šálek horkého čaje.",
+    "ucel": "Vylitím na čtečku u dveří v 1. patře způsobíš zkrat, který dveře otevře bez karty.",
+    "prostor": "bufet",
+    "prenositelny": true,
+    "pouziti": "alternativni"
+  },
+  {
+    "nazev": "Tiché boty",
+    "popis": "Tenisky, které tlumí kroky.",
+    "ucel": "Sníží tvou hlučnost na nulu. Školník tě neuslyší, ani když projdeš kousek za ním.",
+    "prostor": "šatny",
+    "prenositelny": true,
+    "pouziti": "alternativni"
+  },
+  {
+    "nazev": "Olejnička",
+    "popis": "Lahvička s olejem.",
+    "ucel": "Nový předmět. Promažeš s ní panty u zadního východu. Pokud to neuděláš, páčení dveří udělá hrozný zvuk a školník tě chytí.",
+    "prostor": "suterén – dílny",
+    "prenositelny": true,
+    "pouziti": "alternativni"
+  },
+  {
+    "nazev": "Ztracená peněženka",
+    "popis": "Peněženka někoho ztracená.",
+    "ucel": "Pokud ji vrátíš bufeťákovi, dá ti Master klíč (nemusíš hledat dílčí klíče od učeben).",
+    "prostor": "jídelna",
+    "prenositelny": true,
+    "pouziti": "pomocny"
+  },
+  {
+    "nazev": "Starý tahák",
+    "popis": "Tahák na testy.",
+    "ucel": "Úplatek pro školníka. Když tě chytí, můžeš mu ho dát a on tě nechá jít (jednorázová záchrana).",
+    "prostor": "učebna 29",
+    "prenositelny": true,
+    "pouziti": "pomocny"
+  }
+]

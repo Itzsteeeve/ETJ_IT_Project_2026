@@ -69,4 +69,33 @@ public class HerniPlan {
 
         return prostory;
     }
+
+    public static Map<String, Predmet> nactiPredmety() {
+        Map<String, Predmet> predmety = new HashMap<>();
+        ObjectMapper mapper = new ObjectMapper();
+        try (InputStream input = new FileInputStream("resource/Predmety.json")) {
+            @SuppressWarnings("unchecked")
+            Map<String, Object>[] items = (Map<String, Object>[]) mapper.readValue(input, Map[].class);
+
+            if (items != null) {
+                for (Map<String, Object> raw : items) {
+                    Object n = raw.get("nazev");
+                    if (n == null) continue;
+                    String nazev = n.toString();
+                    Object p = raw.get("popis");
+                    String popis = p == null ? "" : p.toString();
+                    Object pr = raw.get("prenositelny");
+                    boolean prenositelny = pr != null && Boolean.parseBoolean(pr.toString());
+                    Object pro = raw.get("prostor");
+                    String prostor = pro == null ? "" : pro.toString();
+                    Object c = raw.get("pouziti");
+                    String pouziti = c == null ? "" : c.toString();
+                    predmety.put(nazev, new Predmet(nazev, popis, prenositelny, prostor, pouziti));
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Chyba při načítání předmětů: " + e.getMessage());
+        }
+        return predmety;
+    }
 }

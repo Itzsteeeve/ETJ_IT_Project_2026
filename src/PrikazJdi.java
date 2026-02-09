@@ -2,19 +2,36 @@ public class PrikazJdi implements IPrikaz {
     private Hra hra;
     public PrikazJdi(Hra hra) { this.hra = hra; }
     public String getNazev() { return "jdi"; }
+
     public String provedPrikaz(String... parametry) {
         if (parametry.length == 0) {
-            return "Musíš zadat název místnosti.";
+            return "musis zadat nazev mistnosti.";
         }
-        String cil = parametry[0];
-        Prostor novy = hra.getProstory().get(cil);
+
+        String cil;
+        if (parametry.length == 1) {
+            cil = parametry[0];
+        } else {
+            cil = String.join(" ", parametry);
+        }
+        cil = cil.trim();
+
+        Prostor novy = null;
+        for (Prostor p : hra.getProstory().values()) {
+            if (p == null || p.getNazev() == null) continue;
+            if (p.getNazev().equalsIgnoreCase(cil)) {
+                novy = p;
+                break;
+            }
+        }
+
         if (novy == null) {
-            return "Prostor '" + cil + "' neexistuje.";
+            return "prostor '" + cil + "' neexistuje.";
         }
-        if (!novy.getPatro().equals(hra.getAktualniProstor().getPatro())) {
-            return "Nemůžeš jít do jiného patra.";
-        }
+
         hra.setAktualniProstor(novy);
-        return "Přesunuto do: "+novy.getNazev()+" - "+novy.getPopis();
+        return "presunuto do: " + novy.getNazev() + " - " + novy.getPopis();
     }
+
+
 }

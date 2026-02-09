@@ -33,9 +33,17 @@ public class Inventar {
         return veci.remove(nazev);
     }
 
+    public Predmet get(String nazev) {
+        return veci.get(nazev);
+    }
+
+    public boolean obsahuje(String nazev) {
+        return veci.containsKey(nazev);
+    }
+
     public String getSeznamVeci() {
         if (veci.isEmpty()) {
-            return "prázdný";
+            return "prazdny";
         }
         return String.join(", ", veci.keySet());
     }

@@ -1,29 +1,29 @@
 [
   {
-    "jmeno": "bufeták",
-    "popis": "Bufeták, který prodává svačiny a nápoje ve školním bufetu.",
+    "jmeno": "bufetak",
+    "popis": "bufetak, ktery prodava svaciny a napoje ve skolnim bufetu.",
     "vety": [
-      "Co si dáš? Máme čokolády, chipsy a limonády.",
-      "Dnes je speciální nabídka: teplý oběd za polovic.",
-      "Platíš kartou nebo hotově?"
+      "co si das? mame cokolady, chipsy a limonady.",
+      "dnes je specialni nabidka: teply obed za polovicu.",
+      "platis kartou nebo hotove?"
     ]
   },
   {
-    "jmeno": "uklízečka",
-    "popis": "Uklízečka, která udržuje školu v čistotě a má vždy něco na srdci.",
+    "jmeno": "uklizecka",
+    "popis": "uklizecka, ktera udrzuje skolu v cistote a ma vzdy neco na srdci.",
     "vety": [
-      "Ahoj, potřebuješ něco uklidit?",
-      "Škola je plná prachu, musím se do toho pustit.",
-      "Buď tak hodný a nešlapej po podlaze, právě jsem ji umyla."
+      "ahoj, potrebujes neco uklidit?",
+      "skola je plna prachu, musim se do toho pustit.",
+      "bud tak hodny a neslapej po podlaze, prave jsem ji umyla."
     ]
   },
   {
-    "jmeno": "školník",
-    "popis": "Školník, který dohlíží na chod školy a má vždy rady na všechno.",
+    "jmeno": "skolnik",
+    "popis": "skolnik, ktery dohlizi na chod skoly a ma vzdy rady na vsechno.",
     "vety": [
-      "Dobré ráno, mladý muži. Co tady děláš?",
-      "Pokud něco potřebuješ, řekni mi, já to zařídím.",
-      "Škola musí být v pořádku, jinak by to nešlo."
+      "dobre rano. co tady delas?",
+      "pokud neco potrebujes, rekni mi, ja to zaridim.",
+      "skola musi byt v poradku, jinak by to neslo."
     ]
   }
 ]

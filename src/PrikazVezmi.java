@@ -4,24 +4,32 @@ public class PrikazVezmi implements IPrikaz {
     public String getNazev() { return "vezmi"; }
     public String provedPrikaz(String... parametry) {
         if (parametry.length == 0) {
-            return "Zadej název předmětu.";
+            return "Zadej nazev predmetu.";
         }
-        String nazev = parametry[0];
+
+        String nazev;
+        if (parametry.length == 1) {
+            nazev = parametry[0];
+        } else {
+            nazev = String.join(" ", parametry);
+        }
+        nazev = nazev.trim();
+
         Prostor aktual = hra.getAktualniProstor();
         Predmet p = aktual.odeberPredmet(nazev);
         if (p == null) {
-            return "Předmět '" + nazev + "' zde není.";
+            return "Predmet '" + nazev + "' zde neni.";
         }
         if (!p.jePrenositelny()) {
             aktual.vlozPredmet(p);
-            return "Předmět '" + nazev + "' nelze vzít.";
+            return "Predmet '" + nazev + "' nelze vzit.";
         }
         Inventar inv = hra.getInventar();
         if (inv.vloz(p)) {
             return "Vzal jsi: " + nazev;
         } else {
             aktual.vlozPredmet(p);
-            return "Nemůžeš vzít více předmětů tohoto typu. ";
+            return "Nemuzes vzit vice predmetu tohoto typu.";
         }
     }
 }

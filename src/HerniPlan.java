@@ -20,7 +20,7 @@ public class HerniPlan {
                 }
             }
         } catch (Exception e) {
-            System.err.println("Chyba při načítání postav: " + e.getMessage());
+            System.err.println("Chyba pri nacitani postav: " + e.getMessage());
         }
 
         return postavy;
@@ -40,11 +40,11 @@ public class HerniPlan {
                 }
             }
         } catch (Exception e) {
-            System.err.println("Chyba při načítání místností: " + e.getMessage());
+            System.err.println("Chyba pri nacitani mistnosti: " + e.getMessage());
         }
 
         if (prostory.isEmpty()) {
-            System.err.println("Nebyly načteny žádné místnosti z JSONu.");
+            System.err.println("Nebyly nacteny zadne mistnosti z JSONu.");
         }
 
         return prostory;
@@ -64,7 +64,7 @@ public class HerniPlan {
                 }
             }
         } catch (Exception e) {
-            System.err.println("Chyba při načítání předmětů: " + e.getMessage());
+            System.err.println("Chyba pri nacitani predmetu: " + e.getMessage());
         }
 
         return predmety;

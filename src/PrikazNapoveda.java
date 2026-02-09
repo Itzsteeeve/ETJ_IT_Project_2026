@@ -3,6 +3,6 @@ public class PrikazNapoveda implements IPrikaz {
     public PrikazNapoveda(SeznamPrikazu seznam) { this.seznam = seznam; }
     public String getNazev() { return "napoveda"; }
     public String provedPrikaz(String... parametry) {
-        return "Dostupné příkazy: " + seznam.vratNazvyPrikazu();
+        return "Dostupne prikazy: " + seznam.vratNazvyPrikazu();
     }
 }

@@ -9,16 +9,30 @@ public class Prostor {
     private Map<String, Predmet> predmety = new HashMap<>();
     private Postava npc;
 
-    // Jackson potřebuje bezparametrický konstruktor
+    private Map<String, Predmet> mistaObsah = new HashMap<>();
+
     public Prostor() {
         this.vychody = new HashMap<>();
         this.predmety = new HashMap<>();
+        if (mistaObsah == null) mistaObsah = new HashMap<>();
     }
 
     public Prostor(String nazev, String popis, String patro) {
         this.nazev = nazev;
         this.popis = popis;
         this.patro = patro;
+        if (mistaObsah == null) mistaObsah = new HashMap<>();
+    }
+
+    private boolean jeZnameMisto(String key) {
+        return "suplik".equals(key) || "skrin".equals(key) || "stul".equals(key);
+    }
+
+    private String zpravaNicNeni(String key) {
+        if ("stul".equals(key)) return "na stole nic nelezi.";
+        if ("skrin".equals(key)) return "ve skrini nic neni.";
+        if ("suplik".equals(key)) return "v supliku nic neni.";
+        return "nic tam neni.";
     }
 
     @Override
@@ -40,6 +54,35 @@ public class Prostor {
     public String getNazev() { return nazev; }
     public String getPopis() { return popis; }
     public String getPatro() { return patro; }
+
+    public void vlozPredmetDoMista(String misto, Predmet predmet) {
+        if (misto == null || predmet == null) return;
+        if (mistaObsah == null) mistaObsah = new HashMap<>();
+
+        String key = misto.trim().toLowerCase();
+        if (!jeZnameMisto(key)) return;
+        mistaObsah.put(key, predmet);
+    }
+
+    public String prozkoumejMisto(String misto) {
+        if (misto == null) return "";
+        if (mistaObsah == null) mistaObsah = new HashMap<>();
+
+        String key = misto.trim().toLowerCase();
+        if (!jeZnameMisto(key)) {
+            return "takove misto tu neni. muzes prozkoumat: suplik, skrin, stul";
+        }
+
+        Predmet nalez = mistaObsah.get(key);
+        if (nalez == null) {
+            return zpravaNicNeni(key);
+        }
+
+        mistaObsah.put(key, null);
+        vlozPredmet(nalez);
+        return "nasel jsi predmet: " + nalez.getNazev() + ".\n" +
+                "muzes ho sebrat prikazem: vezmi " + nalez.getNazev();
+    }
 
     public void setNazev(String nazev) {
         this.nazev = nazev;

@@ -3,6 +3,6 @@ public class PrikazPomoc implements IPrikaz {
     public PrikazPomoc(SeznamPrikazu sp) { this.sp = sp; }
     public String getNazev() { return "pomoc"; }
     public String provedPrikaz(String... parametry) {
-        return "Potřebuješ pomoc? Zkus příkazy: " + sp.vratNazvyPrikazu();
+        return "Potrebujes pomoc? Zkus prikazy: " + sp.vratNazvyPrikazu();
     }
 }

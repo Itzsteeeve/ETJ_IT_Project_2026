@@ -4,6 +4,6 @@ public class PrikazKonec implements IPrikaz {
     public String getNazev() { return "konec"; }
     public String provedPrikaz(String... parametry) {
         hra.setKonecHry(true);
-        return "Hra skončila.";
+        return "Hra skoncila.";
     }
 }

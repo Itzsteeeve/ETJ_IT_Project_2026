@@ -30,8 +30,13 @@ public class PrikazJdi implements IPrikaz {
         }
 
         hra.setAktualniProstor(novy);
-        return "presunuto do: " + novy.getNazev() + " - " + novy.getPopis();
+        String res = "presunuto do: " + novy.getNazev() + " - " + novy.getPopis();
+
+        String encounter = hra.zkontrolujEncounterPoVstupu();
+        if (encounter != null && !encounter.isEmpty()) {
+            res += "\n" + encounter;
+        }
+
+        return res;
     }
-
-
 }

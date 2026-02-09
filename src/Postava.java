@@ -1,9 +1,10 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Postava {
     private String jmeno;
     private String popis;
-    private List<String> vety;
+    private ArrayList<String> vety;
 
     public Postava() {
     }
@@ -11,7 +12,7 @@ public class Postava {
     Postava(String jmeno, String popis, List<String> vety) {
         this.jmeno = jmeno;
         this.popis = popis;
-        this.vety = vety;
+        this.vety = (ArrayList<String>) vety;
     }
 
     public String getJmeno() {
@@ -35,7 +36,7 @@ public class Postava {
     }
 
     public void setVety(List<String> vety) {
-        this.vety = vety;
+        this.vety = (ArrayList<String>) vety;
     }
 
     @Override

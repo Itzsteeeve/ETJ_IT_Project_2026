@@ -58,8 +58,8 @@
   {
     "nazev": "nahradni cipova ctecka",
     "popis": "nahradni dil pro ctecku karet.",
-    "ucel": "ctecka u hlavniho vchodu je rozbita. musis dojit do suterenu, vzit nahradni dil a ctecku na vratnici opravit.",
-    "prostor": "suteran dilny",
+    "ucel": "ctecka u hlavniho vchodu je rozbita. musis vzit nahradni dil a ctecku na vratnici opravit.",
+    "prostor": "vratnice",
     "prenositelny": true,
     "pouziti": "oficialni"
   },
@@ -99,22 +99,22 @@
     "nazev": "tiche boty",
     "popis": "tenisky, ktere tlumi kroky.",
     "ucel": "snizi tvou hlucnost na nulu. skolnik te neuslysi.",
-    "prostor": "satny",
+    "prostor": "telocvicna",
     "prenositelny": true,
     "pouziti": "alternativni"
   },
   {
     "nazev": "olejnicka",
     "popis": "lahvicka s olejem.",
-    "ucel": "promazes s ni panty u zadniho vychodu. jinak to udela hluk a skolnik te chytne.",
-    "prostor": "suteran dilny",
+    "ucel": "promazes s ni panty u zadniho vychodu. pokud to neudelas, bude to delat hluk.",
+    "prostor": "vratnice",
     "prenositelny": true,
     "pouziti": "alternativni"
   },
   {
     "nazev": "ztracena penezenka",
     "popis": "penezenka nekoho ztracena.",
-    "ucel": "kdyz ji vratis bufetakovi, da ti master klic.",
+    "ucel": "kdyz ji vratis uklizecce necha te byt (jednorazove).",
     "prostor": "jidelna",
     "prenositelny": true,
     "pouziti": "pomocny"

@@ -10,6 +10,12 @@ public class PrikazMistnosti implements IPrikaz {
         return "mistnosti";
     }
 
+    /**
+     * Vypíše všechny místnosti v budově, seřazené podle pater.
+     * @param sb StringBuilder pro sestavení výsledného textu
+     * @param patroNazev název patra, pro které se mají místnosti vypisovat
+     */
+
     private void vypisPatro(StringBuilder sb, String patroNazev) {
         sb.append("\n").append(patroNazev).append(":\n");
         for (Prostor p : hra.getProstory().values()) {
@@ -21,6 +27,7 @@ public class PrikazMistnosti implements IPrikaz {
             }
         }
     }
+
 
     @Override
     public String provedPrikaz(String... parametry) {

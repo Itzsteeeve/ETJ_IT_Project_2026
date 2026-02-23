@@ -3,6 +3,12 @@ public class PrikazProzkoumej implements IPrikaz {
     public PrikazProzkoumej(Hra hra) { this.hra = hra; }
     public String getNazev() { return "prozkoumej"; }
 
+    /**
+     * Prozkoumej aktualni prostor, nebo konkretni misto v prostoru (suplik, skrin, stul).
+     * @param parametry - pokud je zadano, prozkouma konkretni misto, jinak prozkouma cely prostor
+     * @return textovy popis aktualniho prostoru nebo konkretniho mista
+     */
+
     public String provedPrikaz(String... parametry) {
         Prostor aktual = hra.getAktualniProstor();
         if (aktual == null) return "nejsi v zadnem prostoru.";

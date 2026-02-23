@@ -4,6 +4,12 @@ import java.util.Map;
 public class Inventar {
     private Map<String, Predmet> veci = new HashMap<>();
 
+    /**
+     * vlozi predmet do inventare, pokud neprekroci limit pro dany typ
+     * @param p - predmet k vlozeni
+     * @return true, pokud se predmet vlozil, false pokud prekrocil limit
+     */
+
     public boolean vloz(Predmet p) {
         String typ = p.getPouziti();
         int countOficialniAlternativni = 0;

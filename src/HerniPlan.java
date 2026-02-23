@@ -6,6 +6,11 @@ import java.util.Map;
 
 public class HerniPlan {
 
+    /**
+     * nacitani postav z JSONu, klic je jmeno postavy
+     * @return hash mapa jmeno -> postava
+     */
+
     public static Map<String, Postava> nactiPostavy() {
         Map<String, Postava> postavy = new HashMap<>();
         ObjectMapper mapper = new ObjectMapper();
@@ -25,6 +30,11 @@ public class HerniPlan {
 
         return postavy;
     }
+
+    /**
+     * nacitani mistnosti z JSONu, klic je nazev mistnosti
+     * @return hash mapa nazev -> prostor
+     */
 
     public static Map<String, Prostor> zalozProstory() {
         Map<String, Prostor> prostory = new HashMap<>();
@@ -49,6 +59,11 @@ public class HerniPlan {
 
         return prostory;
     }
+
+    /**
+     * nacitani predmetu z JSONu, klic je nazev predmetu
+     * @return hash mapa nazev -> predmet
+     */
 
     public static Map<String, Predmet> nactiPredmety() {
         Map<String, Predmet> predmety = new HashMap<>();

@@ -198,6 +198,12 @@ public class Hra {
         return "tento predmet tady nejde pouzit.";
     }
 
+    /**
+     * zpracuje zadany prikaz a vrati odpoved, ktera se vypise hraci. pokud je prikaz neplatny, vrati chybovou hlasku.
+     * @param radek - text zadany hracem, ktery obsahuje prikaz a pripadne argumenty
+     * @return text, ktery se vypise hraci jako odpoved na zadany prikaz
+     */
+
     public String zpracujPrikaz(String radek) {
         if (radek == null || radek.trim().isEmpty()) return "neplatny prikaz.";
 
@@ -222,6 +228,10 @@ public class Hra {
             return p.provedPrikaz(args.split("\\s+"));
         }
     }
+
+    /**
+     * hlavni metoda pro spusteni hry. vypisuje uvodni text, pak ceka na zadani prikazu od hrace a zpracovava je, dokud hra neskonci.
+     */
 
     public void hraj() {
         System.out.println("=== vitej ve hre escape the jecna ===");
@@ -271,6 +281,12 @@ public class Hra {
     public Map<String, Prostor> getProstory() {
         return prostory;
     }
+
+    /**
+     * zkontroluje, jestli v aktualnim prostoru je postava a jestli se spusti encounter.
+     * pokud ano, vrati text encounteru, ktery se vypise hraci. pokud ne, vrati prazdny retezec.
+     * @return text encounteru, nebo prazdny retezec, pokud se encounter nespusti
+     */
 
     public String zkontrolujEncounterPoVstupu() {
         if (aktualniProstor == null) return "";

@@ -3,6 +3,12 @@ public class PrikazJdi implements IPrikaz {
     public PrikazJdi(Hra hra) { this.hra = hra; }
     public String getNazev() { return "jdi"; }
 
+    /**
+     * Provede příkaz "jdi". Přesune hráče do jiné místnosti, pokud existuje.
+     * @param parametry - název cílové místnosti (může být více slov)
+     * @return textový popis výsledku pokusu o přesun, včetně popisu nové místnosti a případných encounterů
+     */
+
     public String provedPrikaz(String... parametry) {
         if (parametry.length == 0) {
             return "musis zadat nazev mistnosti.";

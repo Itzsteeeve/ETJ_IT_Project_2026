@@ -64,6 +64,13 @@ public class Prostor {
         mistaObsah.put(key, predmet);
     }
 
+    /**
+     * prozkoumej konkretni misto v prostoru (suplik, skrin, stul) a pokud tam je predmet, vloz ho do prostoru a odeber z mista
+     * @param misto - nazev mista k prozkoumani (suplik, skrin, stul)
+     * @return textovy popis vysledku prozkoumavani mista, pokud misto neni znamo, vraci se chybova hlaska,
+     * pokud misto je prazdne, vraci se zprava o prazdnem miste, pokud misto obsahuje predmet, vraci se zprava o nalezeni predmetu a instrukce jak ho sebrat
+     */
+
     public String prozkoumejMisto(String misto) {
         if (misto == null) return "";
         if (mistaObsah == null) mistaObsah = new HashMap<>();

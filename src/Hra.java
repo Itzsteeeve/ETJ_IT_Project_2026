@@ -214,7 +214,7 @@ public class Hra {
 
         IPrikaz p = platnePrikazy.vratPrikaz(prikaz);
         if (p == null) {
-            return "neznamy prikaz: " + prikaz;
+            return "neznamy prikaz: " + prikaz + "\nzkus napsat 'napoveda' pro seznam prikazu.";
         }
         if (args.isEmpty()) {
             return p.provedPrikaz();

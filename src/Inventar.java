@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Inventar {
-    private Map<String, Predmet> veci = new HashMap<>();
+    private static Map<String, Predmet> veci = new HashMap<>();
 
     /**
      * vlozi predmet do inventare, pokud neprekroci limit pro dany typ
@@ -52,5 +52,9 @@ public class Inventar {
             return "prazdny";
         }
         return String.join(", ", veci.keySet());
+    }
+
+    public static void pridat (Predmet predmet){
+        veci.put(predmet.getNazev(),predmet);
     }
 }

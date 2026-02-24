@@ -61,6 +61,18 @@ public class Hra {
         }
     }
 
+    private void analyzaInventare(){
+        if (inventar.obsahuje("spinava karta spravce") && inventar.obsahuje("lahvicka s lihem")){
+            inventar.odeber("spinava karta spravce");
+            inventar.odeber("lahvicka s lihem");
+
+            System.out.println("karta byla vycistena -spinava karta spravce -lahvicka s lihem +cista karta spravce");
+            inventar.vloz(new Predmet("cista karta spravce", "cista karta spravce", true, "", "oficialni"));
+        }
+
+
+    }
+
     private void pripravPrikazy() {
         this.platnePrikazy.vlozPrikaz(new PrikazJdi(this));
         this.platnePrikazy.vlozPrikaz(new PrikazKonec(this));
@@ -71,6 +83,8 @@ public class Hra {
         this.platnePrikazy.vlozPrikaz(new PrikazMluv(this));
         this.platnePrikazy.vlozPrikaz(new PrikazProzkoumej(this));
     }
+
+
 
     private String pouzijPredmet(String nazevPredmetu) {
         if (nazevPredmetu == null || nazevPredmetu.trim().isEmpty()) {
@@ -181,6 +195,10 @@ public class Hra {
         }
 
         if (nazevPredmetu.equals("olejnicka")) {
+            if (aktualniProstor.getNazev() != "vratnice"){
+                return "musis byt na vratnici";
+            }
+
             inventar.odeber("olejnicka");
             zadniVychodPromazany = true;
             return "promazal jsi panty u zadniho vychodu. pujde otevrit potichu.";
@@ -246,7 +264,9 @@ public class Hra {
 
         Scanner sc = new Scanner(System.in);
         while (!jeKonec()) {
+            analyzaInventare();
             System.out.print("> ");
+
             if (!sc.hasNextLine()) break;
             String radek = sc.nextLine();
 
